@@ -1,0 +1,1078 @@
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "astronauts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "astronauts" ADD "name" varchar
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.6ms)[0m  DELETE FROM "astronauts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "astronauts" ("name") VALUES (?)  [["name", "Neil Armstrong"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "astronauts" ("name") VALUES (?)[0m  [["name", "Buzz Aldrin"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mAstronaut Load (0.5ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "astronauts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "astronauts" ("name") VALUES (?)  [["name", "Neil Armstrong"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "astronauts" ("name") VALUES (?)[0m  [["name", "Buzz Aldrin"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-08-04 15:10:58 -0500
+Processing by AstronautsController#index as HTML
+  Rendered astronauts/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Director):
+     6: 
+     7: <!-- <div class="recent clearfix">
+     8:   <h4>Your Recently Viewed Items</h4>
+     9:   <% recent_movies = Director.find_by_name('Ron Howard').movies %>
+    10:   <% recent_movies.each do |movie| %>
+    11:     <%= link_to image_tag(movie.poster_url, height: '200px'), movie %>
+    12:   <% end %>
+  app/views/astronauts/index.html.erb:9:in `_app_views_astronauts_index_html_erb__1796450894817604846_70311885651800'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.1ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (120.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:12:25 -0500
+Processing by AstronautsController#index as HTML
+  Rendered astronauts/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+     7: 
+     8: 
+     9: <!-- CHALLENGE #1: Show the correct number of movies listed. -->
+    10: <p><%= @astronauts.count %> astronauts shown.</p>
+    11: 
+    12: <table class='table table-striped'>
+    13:   <thead>
+  app/views/astronauts/index.html.erb:10:in `_app_views_astronauts_index_html_erb__4245367422565966181_70202121455540'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (107.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:15:14 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.2ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 1762ms (Views: 1723.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-04 15:15:15 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-04 15:15:15 -0500
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 15:15:15 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 15:15:15 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-04 15:15:15 -0500
+
+
+Started GET "/" for ::1 at 2015-08-04 15:16:27 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 195ms (Views: 165.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-04 15:16:27 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-04 15:16:27 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-04 15:16:27 -0500
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 15:16:27 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 15:16:27 -0500
+
+
+Started GET "/" for ::1 at 2015-08-04 15:19:27 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 180ms (Views: 152.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 15:19:27 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-04 15:19:27 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 15:19:27 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-04 15:19:27 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-04 15:19:27 -0500
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:21:48 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for AstronautsController):
+  actionpack (4.2.3) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (108.9ms)
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:21:48 -0500
+
+AbstractController::ActionNotFound (The action 'show' could not be found for AstronautsController):
+  actionpack (4.2.3) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:37:12 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 194ms (Views: 165.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-04 15:37:12 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-04 15:37:12 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-04 15:37:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 15:37:12 -0500
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 15:37:12 -0500
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:37:14 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered astronauts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/4" for ::1 at 2015-08-04 15:37:26 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered astronauts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 15:37:35 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:37:37 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 15:37:38 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:43:27 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 181ms (Views: 151.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:43:29 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered astronauts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:43:32 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/4" for ::1 at 2015-08-04 15:43:33 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered astronauts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:43:35 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/astronauts/new" for ::1 at 2015-08-04 15:43:37 -0500
+Processing by AstronautsController#new as HTML
+  Rendered astronauts/new.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `year' for nil:NilClass):
+    14: 
+    15:   <!-- <div>
+    16:     <label>Movie Year:</label>
+    17:     <input type="text" name="year" value="<%= @movie.year %>">
+    18:   </div> -->
+    19: 
+    20: 
+  app/views/astronauts/new.html.erb:17:in `block in _app_views_astronauts_new_html_erb__1503297394515487367_70187551380600'
+  app/views/astronauts/new.html.erb:9:in `_app_views_astronauts_new_html_erb__1503297394515487367_70187551380600'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (115.0ms)
+
+
+Started GET "/astronauts/new" for ::1 at 2015-08-04 15:43:37 -0500
+Processing by AstronautsController#new as HTML
+  Rendered astronauts/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `year' for nil:NilClass):
+    14: 
+    15:   <!-- <div>
+    16:     <label>Movie Year:</label>
+    17:     <input type="text" name="year" value="<%= @movie.year %>">
+    18:   </div> -->
+    19: 
+    20: 
+  app/views/astronauts/new.html.erb:17:in `block in _app_views_astronauts_new_html_erb__1503297394515487367_70187490545640'
+  app/views/astronauts/new.html.erb:9:in `_app_views_astronauts_new_html_erb__1503297394515487367_70187490545640'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.9ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (96.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:44:09 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 220ms (Views: 182.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/astronauts/new" for ::1 at 2015-08-04 15:44:11 -0500
+Processing by AstronautsController#new as HTML
+  Rendered astronauts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/astronauts" for ::1 at 2015-08-04 15:44:17 -0500
+
+AbstractController::ActionNotFound (The action 'create' could not be found for AstronautsController):
+  actionpack (4.2.3) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.9ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (108.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:49:14 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 216ms (Views: 179.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:49:16 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered astronauts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:49:18 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/new" for ::1 at 2015-08-04 15:49:20 -0500
+Processing by AstronautsController#new as HTML
+  Rendered astronauts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/astronauts" for ::1 at 2015-08-04 15:49:28 -0500
+Processing by AstronautsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PuI0uBjP28we2g/VWwmkcnD9D0FmdlvdcD1kVmwsb5g8eZUIe31Pot9oz2jSygUHDjDQzAlNsuWz2C9JL/nu3w==", "name"=>"Bryce Cunningham"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "astronauts" ("name") VALUES (?)[0m  [["name", "Bryce Cunningham"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:49:28 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/astronauts/5" for ::1 at 2015-08-04 15:50:07 -0500
+
+AbstractController::ActionNotFound (The action 'destroy' could not be found for AstronautsController):
+  actionpack (4.2.3) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/brycecunningham/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.6ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (107.8ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:56:27 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 182ms (Views: 153.8ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/astronauts/5" for ::1 at 2015-08-04 15:56:30 -0500
+Processing by AstronautsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fZSUCUxqXSa4FjZ8azy6GWoUODC3YRsP/+0RRkIukW5/DzW5L9jJSHmk9sHi/xtsFNnnvdha8jc8CFpZAfsQKQ==", "id"=>"5"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "astronauts" WHERE "astronauts"."id" = ?  [["id", 5]]
+Redirected to http://localhost:3000/astronauts
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 15:56:30 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/3/edit" for ::1 at 2015-08-04 15:56:34 -0500
+Processing by AstronautsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered astronauts/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/astronauts/3" for ::1 at 2015-08-04 15:56:43 -0500
+Processing by AstronautsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EMWCKLjGv/NbxbxWNcrSty5+XVd7h2T0pKgKwCWjyzUSXiOY23QrnZp3fOu8CXPCULOC2hS8jcxnTUHfZnZKcg==", "name"=>"Neil Armstron", "id"=>"3"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "astronauts" SET "name" = ? WHERE "astronauts"."id" = ?  [["name", "Neil Armstron"], ["id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:56:43 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/astronauts/3" for ::1 at 2015-08-04 15:56:46 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered astronauts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 15:56:54 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/3/edit" for ::1 at 2015-08-04 15:56:56 -0500
+Processing by AstronautsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered astronauts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/astronauts/3" for ::1 at 2015-08-04 15:56:59 -0500
+Processing by AstronautsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wRv8bmdisVuTuLYJJuOVvXC4uTXNr4NVxkQc2+1M7xXDgF3eBNAlNVIKdrSvIDTIDnVmuKKUam0FoVfErpluUg==", "name"=>"Neil Armstrong", "id"=>"3"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "astronauts" SET "name" = ? WHERE "astronauts"."id" = ?  [["name", "Neil Armstrong"], ["id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:56:59 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/new" for ::1 at 2015-08-04 15:57:02 -0500
+Processing by AstronautsController#new as HTML
+  Rendered astronauts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/astronauts" for ::1 at 2015-08-04 15:57:06 -0500
+Processing by AstronautsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7q/S+h1dvHozGW38zxP2FixvMn+X8YUc2H2IASP3k1HsNHNKfu8oFPKrrUFG0FdjUqLt8vjKbCQbmMMeYCISFg==", "name"=>"bbbb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "astronauts" ("name") VALUES (?)[0m  [["name", "bbbb"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:57:06 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/6/edit" for ::1 at 2015-08-04 15:57:08 -0500
+Processing by AstronautsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered astronauts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/astronauts/6" for ::1 at 2015-08-04 15:57:11 -0500
+Processing by AstronautsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+KoUfsxf5cKo1P8PynSamr6DmI5xUgK9UVX75E5gsyn6MbXOr+1xrGlmP7JDtzvvwE5HAx5p64WSsLD7DbUybg==", "name"=>"bbbbxxxx", "id"=>"6"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "astronauts" SET "name" = ? WHERE "astronauts"."id" = ?  [["name", "bbbbxxxx"], ["id", 6]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 15:57:11 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/astronauts/6" for ::1 at 2015-08-04 15:57:12 -0500
+Processing by AstronautsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/ljFbcwOrsY8+x19tSaqzyNhrD/1AbDoUxj7ThCaf1v8w2Tdr7w6qP1J3cA85Qu6Xaxzspo6WdCQ/bBRU0/+HA==", "id"=>"6"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (2.4ms)[0m  [1mDELETE FROM "astronauts" WHERE "astronauts"."id" = ?[0m  [["id", 6]]
+Redirected to http://localhost:3000/astronauts
+Completed 302 Found in 4ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 15:57:12 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "astronauts" ADD "wiki_pageid" integer[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (2.5ms)[0m  DELETE FROM "astronauts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "astronauts" ("name", "wiki_pageid") VALUES (?, ?)  [["name", "Neil Armstrong"], ["wiki_pageid", 21247]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "astronauts" ("name", "wiki_pageid") VALUES (?, ?)[0m  [["name", "Buzz Aldrin"], ["wiki_pageid", 65777]]
+  [1m[35m (0.7ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-08-04 16:14:14 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 185ms (Views: 154.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/astronauts/7" for ::1 at 2015-08-04 16:14:16 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.2ms)
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
+  app/models/astronaut.rb:7:in `download_details'
+  app/controllers/astronauts_controller.rb:40:in `show'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (117.9ms)
+
+
+Started GET "/astronauts/7" for ::1 at 2015-08-04 16:14:16 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 7]]
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.1ms)
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
+  app/models/astronaut.rb:7:in `download_details'
+  app/controllers/astronauts_controller.rb:40:in `show'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (97.9ms)
+
+
+Started GET "/astronauts/7" for ::1 at 2015-08-04 16:15:59 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 7]]
+Completed 500 Internal Server Error in 584ms (ActiveRecord: 1.5ms)
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
+  app/models/astronaut.rb:6:in `download_details'
+  app/controllers/astronauts_controller.rb:40:in `show'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.1ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (99.5ms)
+
+
+Started GET "/astronauts/7" for ::1 at 2015-08-04 16:16:00 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 7]]
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.1ms)
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
+  app/models/astronaut.rb:6:in `download_details'
+  app/controllers/astronauts_controller.rb:40:in `show'
+
+
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.9ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brycecunningham/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (95.8ms)
+
+
+Started GET "/astronauts/7" for ::1 at 2015-08-04 16:18:40 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered astronauts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 186ms (Views: 147.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 16:18:44 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/8" for ::1 at 2015-08-04 16:18:46 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered astronauts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 16:18:48 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts" for ::1 at 2015-08-04 16:18:49 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/8/edit" for ::1 at 2015-08-04 16:18:51 -0500
+Processing by AstronautsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered astronauts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/astronauts/8" for ::1 at 2015-08-04 16:18:55 -0500
+Processing by AstronautsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NyPgBHbW9mRu/Rsu0kRivFnaMCq0UtcGrwI0OA5i1XY1uEG0FWRiCq9P25Nbh8PJJxfvp9tpPj5s538nTbdUMQ==", "name"=>"Buzz Aldrine", "id"=>"8"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "astronauts" SET "name" = ? WHERE "astronauts"."id" = ?  [["name", "Buzz Aldrine"], ["id", 8]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 16:18:55 -0500
+Processing by AstronautsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "astronauts"
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT "astronauts".* FROM "astronauts"[0m
+  Rendered astronauts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/8/edit" for ::1 at 2015-08-04 16:18:57 -0500
+Processing by AstronautsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered astronauts/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/astronauts/8" for ::1 at 2015-08-04 16:19:00 -0500
+Processing by AstronautsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F33pvht2z0/ZW0ieFzGNF+WAOCuWOXgh9jLWdYrLL10V5kgOeMRbIRjpiCOe8ixim03npvkCkRk1151qyR6uGg==", "name"=>"Buzz Aldrin", "id"=>"8"}
+  [1m[36mAstronaut Load (0.1ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "astronauts" SET "name" = ? WHERE "astronauts"."id" = ?[0m  [["name", "Buzz Aldrin"], ["id", 8]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-04 16:19:00 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (3.0ms)[0m  DELETE FROM "astronauts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "astronauts" ("name", "wiki_pageid") VALUES (?, ?)  [["name", "Neil Armstrong"], ["wiki_pageid", 21247]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "astronauts" ("name", "wiki_pageid") VALUES (?, ?)[0m  [["name", "Buzz Aldrin"], ["wiki_pageid", 65777]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started GET "/" for ::1 at 2015-08-04 16:23:05 -0500
+Processing by AstronautsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "astronauts"[0m
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT "astronauts".* FROM "astronauts"
+  Rendered astronauts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 375ms (Views: 346.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-04 16:23:05 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-04 16:23:05 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-04 16:23:05 -0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-04 16:23:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-04 16:23:05 -0500
+
+
+Started GET "/astronauts/9" for ::1 at 2015-08-04 16:23:08 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAstronaut Load (0.2ms)[0m  [1mSELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered astronauts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/astronauts/10" for ::1 at 2015-08-04 16:23:12 -0500
+Processing by AstronautsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mAstronaut Load (0.1ms)[0m  SELECT  "astronauts".* FROM "astronauts" WHERE "astronauts"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered astronauts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.1ms)

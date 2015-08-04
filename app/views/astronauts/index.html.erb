@@ -1,0 +1,35 @@
+<h1>Astronauts
+  <small>
+    <a class="btn btn-success pull-right" href="/astronauts/new">Add a New Astronaut</a>
+  </small>
+</h1>
+
+
+
+<!-- CHALLENGE #1: Show the correct number of movies listed. -->
+<p><%= @astronauts.count %> astronauts shown.</p>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th width="30%">Name</th>
+      <!-- <th width="30%">Directed By</th> -->
+      <!-- <th>Year</th> -->
+      <th></th>
+      <th></th>
+    </tr>
+  <tbody>
+    <% @astronauts.each do |astronaut| %>
+      <tr>
+        <td>
+          <%= link_to astronaut.name, "/astronauts/#{astronaut.id}" %>
+        </td>
+        <td>
+      
+
+        <td><%= link_to "Delete", "/astronauts/#{astronaut.id}", :method => "delete" %></td>
+        <td><%= link_to "Edit", "/astronauts/#{astronaut.id}/edit" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

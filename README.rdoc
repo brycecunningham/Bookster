@@ -1,28 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The thought is to create wikipedia for the NASA. The final project will (hopefully) include astronauts' profiles and pictures, space mission descriptions, and space vehicle information (Apollo-Saturn, Mercury-Redstone, Mercury-Atlas).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I finished the basic steps for the Golden 7 for Astronauts, but I had some trouble pulling the biographical info from the wikipedia API. I'm still working on it but won't have it complete before 5:30. To see the gist of it look at download_details in the astronaut model file.

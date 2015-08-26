@@ -1,0 +1,26 @@
+<h2>
+  <%= @book.title %>
+  <% if logged_in? %>
+    <%= favorite_book_icon(current_user.favorite_books.include?(@book)) %>
+    <%= edit_book_button @book %>
+    <%= delete_book_button @book %>
+  <% end %>
+</h2>
+<div id="book">
+  <div><p><%= @book.description %></p></div>
+  <%= image_tag @book.picture, :height => 225 %>
+  <p><strong>Author:   </strong><%= nl2br @book.author %></p>
+  <p><strong>Year:   </strong><%= nl2br @book.year %></p>
+  <p><strong>Pages:   </strong><%= nl2br @book.pages %></p>
+
+</div>
+
+<br clear="all">
+<% if logged_in? %>
+  <h3>Write a Review</h3>
+  <%= render :partial => 'book_reviews/form', :locals => { :book_review => @book_review } %> 
+<% else %>
+  <h4><%= link_to 'Log in', login_path %> to write a review!</h4>
+<% end %>
+<hr>
+<div id="reviews"><%= render :partial => 'book_reviews/show', :collection => @book.reviews.select(&:persisted?), :as => :review %></div>

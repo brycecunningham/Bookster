@@ -1,0 +1,7 @@
+<h2>Welcome, <%= current_user.first_name %> <%= edit_user_button %></h2>
+<h4>Favorite Books</h4>
+<ul>
+  <% current_user.favorite_books.each do |r| %>
+    <li><%= link_to r.title, book_path(r) %></li>
+  <% end %>
+</ul>

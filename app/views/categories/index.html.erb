@@ -1,0 +1,13 @@
+<div class="flexslider">
+  <ul class="slides">
+    <% @categories.each do |c| %>
+    <li>
+      <%= link_to category_path(c) do %>
+        <%= image_tag c.picture.url %>
+        <p class="flex-caption"><%= c.name %></p>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+

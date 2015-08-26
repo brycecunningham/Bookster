@@ -1,5 +1,0 @@
-== README
-
-The thought is to create wikipedia for the NASA. The final project will (hopefully) include astronauts' profiles and pictures, space mission descriptions, and space vehicle information (Apollo-Saturn, Mercury-Redstone, Mercury-Atlas).
-
-I finished the basic steps for the Golden 7 for Astronauts, but I had some trouble pulling the biographical info from the wikipedia API. I'm still working on it but won't have it complete before 5:30. To see the gist of it look at download_details in the astronaut model file.

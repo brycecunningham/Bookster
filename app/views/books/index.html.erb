@@ -1,0 +1,7 @@
+<h2>Books</h2>
+<div id="books">
+  <%= render :partial => 'item', :collection => @books, :as => :book %>
+</div>
+<div>
+  <%= paginate @books %>
+</div>

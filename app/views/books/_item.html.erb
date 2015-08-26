@@ -1,0 +1,10 @@
+<div class="book">
+  <%= link_to book_path(book) do %>
+    <%= image_tag book.picture.url, :class => [:halo] if book.picture? %>
+    <%= image_tag 'http://placehold.it/150x120&text=No+Image' unless book.picture? %>
+    <div class="book-rating">
+      <%= stars book.reviews.map(&:rating).average %><span><%= book.reviews.count %></span>
+    </div>
+    <div class="book-title"><%= book.title %></div>
+  <% end %>
+</div>

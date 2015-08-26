@@ -1,0 +1,17 @@
+<%= simple_form_for @book do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :category_id, :collection => Category.all, :label_method => :name, :id_method => :id %>
+    <%= f.input :picture %>
+    <%= f.input :description %>
+    <%= f.input :pages %>
+    <%= f.input :author %>
+    <%= f.input :year %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

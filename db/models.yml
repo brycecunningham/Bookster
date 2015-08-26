@@ -1,3 +1,39 @@
-Astronaut
+Category
   name: string
-  wiki_pageid: integer
+  picture: attachment
+
+Book
+  category_id: integer
+  title: string
+  picture: attachment
+  description: text
+  year: string
+  pages: string
+
+BookAuthor
+  book_id: integer
+  description: string
+
+User
+  first_name: string
+  last_name: string
+  email: string
+  persistence_token: string
+  login_count: string
+  failed_login_count: string
+  last_request_at: datetime
+  current_login_at: datetime
+  last_login_at: datetime
+  current_login_ip: string
+  last_login_ip: string
+
+Favoriting
+  book_id: integer
+  user_id: integer
+
+BookReview
+  book_id: integer
+  user_id: integer
+  rating: integer
+  description: text
+  created_at: datetime

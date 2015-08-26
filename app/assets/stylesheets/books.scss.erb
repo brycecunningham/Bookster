@@ -1,0 +1,51 @@
+/*
+  *= require ionrangeslider
+  *= require bootstrap-touchspin/src/jquery.bootstrap-touchspin
+*/
+
+div#books {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  div.book {
+    display: block;
+    height: 200px;
+    width: 150px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    float: left;
+    overflow: hidden;
+    img {
+      max-height: 120px;
+      width: 150px;
+      margin-bottom: 3px;
+      border-bottom: 1px dashed black;
+    }
+    div.book-rating {
+      color: #000;
+      span:before {
+        content: '(';
+      }
+      span {
+        margin-left: 3px;
+      }
+      span:after {
+        content: ')';
+      }
+    }
+    div.book-name {
+      font-weight: bold;
+    }
+  }
+}
+
+div#book {
+  width: 100%;
+  img {
+    float: left;
+    border: 2px solid black;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}

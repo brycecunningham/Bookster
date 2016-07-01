@@ -1,7 +1,9 @@
-#Bookster
+# Bookster
+Web Development final project
 
-My app is called Bookster and is similar to Goodreads. Users can explore books, add new ones, and review them.
+RESTful, database-backed web application, inspired by Goodreads, implements user model with sign-in/sign-up/sign-out, ‘forgot password’ functionality, and optional OAuth login. Users can explore books, add new ones, and review them. 
 
-The idea I submitted for the milestone was essentially wikipedia for NASA, but I was having trouble acquiring the data and getting a grasp on the scope of what I was trying to build. Hence, the change to this book app.
+Accessed by cloning the repository, migrating and seeding the database, and running a local rails server on port 3000. Then go to
+http://localhost:3000/
 
 
